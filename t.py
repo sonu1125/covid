@@ -1,9 +1,8 @@
-from cowin_api import CoWinAPI
+import requests
 
-pin_code = "400080"
-date = '03-05-2021'  # Optional. Default value is today's date
-min_age_limit = 18  # Optional. By default returns centers without filtering by min_age_limit 
+url = "https://api.demo.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=601201&date=03-05-2021"
+header={"X-API-KEY" : 'qwertyuiop'}
 
-cowin = CoWinAPI()
-available_centers = cowin.get_availability_by_pincode(pin_code, date, min_age_limit)
-print(available_centers)
+response =requests.get(url, params=header)
+
+print(response.content)
