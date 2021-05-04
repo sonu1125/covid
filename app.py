@@ -10,7 +10,7 @@ cf_port = os.getenv("PORT")
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-	headers={"x-api-key":"3sjOr2rmM52GzhpMHjDEE1kpQeRxwFDr4YcBEimi"}
+	headers={ 'Authorization': 'Bearer qwertyuiopasdfghjkl' }
 	response =requests.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=601201&date=10-05-2021",headers=headers)
 	return (str(response.content))
 
