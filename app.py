@@ -23,6 +23,10 @@ def test2():
 	response = requests.get(url,headers=headers)
 	return (response.content)
 
+@app.route('/test3') 
+def test3():
+	return ('hello')
+
 if __name__ == "__main__":
 	if cf_port is None:
 		app.run( host='0.0.0.0', port=5000, debug=True )
