@@ -20,7 +20,7 @@ def test2():
 	DATE = request.args.get('answer2')
 	url='https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=' + PINCODE + '&date=' + DATE
 	print(url)
-	response = requests.get(url)
+	response = requests.get(url,headers=headers)
 	return (response.content)
 
 if __name__ == "__main__":
