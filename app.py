@@ -4,13 +4,12 @@ app = Flask(__name__)
 import os
 import requests
 cf_port = os.getenv("PORT")
-
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
 
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-	headers={ "X-API-KEY": "3sjOr2rmM52GzhpMHjDEE1kpQeRxwFDr4YcBEimi" }
 	response =requests.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=601201&date=03-05-2021",headers=headers)
 	return (str(response.content))
 
