@@ -5,8 +5,7 @@ import os
 import requests
 cf_port = os.getenv("PORT")
 content_type = 'application/json' 
-headers = {'Content-Type': content_type}
-
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
 @app.route("/", methods=["GET", "POST"])
 def home():
