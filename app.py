@@ -9,7 +9,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleW
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-	response =requests.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=601201&date=03-05-2021",verify=False,headers=headers)
+	response =requests.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=601201&date=03-05-2021",headers=headers)
 	return (str(response.content))
 
 @app.route("/blr", methods=["GET", "POST"])
@@ -36,7 +36,7 @@ def ap():
 def hyd():
 	response =requests.get("https://api.covidbedsindia.in/v1/storages/6089829403eef36d93d05a6f/Telangana",verify=False)
 	return (response.content)
-s
+
 @app.route('/test2', methods=["GET", "POST"]) 
 def test2():
 	PINCODE = request.args.get('answer')
