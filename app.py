@@ -4,13 +4,13 @@ app = Flask(__name__)
 import os
 import requests
 cf_port = os.getenv("PORT")
-headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
-
+content_type = 'application/json' 
+headers = {'Content-Type': content_type}
 
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-	response =requests.get("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=601201&date=03-05-2021",headers=headers)
+	response =requests.get("https://api.covidbedsindia.in/v1/storages/608982f703eef3de2bd05a72/Bengaluru",verify=False)
 	return (str(response.content))
 
 
