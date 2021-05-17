@@ -32,6 +32,11 @@ def ap():
 	return (response.content)
 
 
+@app.route("/luck", methods=["GET", "POST"])
+def luck():
+	response =requests.get("https://stein.hamaar.cloud/v1/storages/609fc7dde75f9ccdd696eb35/Uttar%20Pradesh",verify=False)
+	return (response.content)
+
 @app.route("/hyd", methods=["GET", "POST"])
 def hyd():
 	response =requests.get("https://api.covidbedsindia.in/v1/storages/6089829403eef36d93d05a6f/Telangana",verify=False)
